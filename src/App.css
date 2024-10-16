@@ -12,7 +12,7 @@
     justify-content: center;
     min-width: 100%;
     min-height: 100%;
-    background: grey;
+    background: #F5F6F7;
     padding: 120px 0;
 }
 
@@ -28,20 +28,23 @@ table {
     width: 100%;
     margin-top: calc(-1 * var(--action-bar-height));
     margin-bottom: calc(2 * var(--action-bar-height));
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
 
     td, th {
-        border: 1px solid dimgrey;
+        border-bottom: 1px solid #E2E6E8;
+        border-top: 1px solid #E2E6E8;
+        border-inline: 0;
         text-align: left;
         padding: 12px;
     }
 
-    tr:nth-child(even) {
-        /*background-color: dimgrey;*/
-    }
-
     thead {
         td, th {
-            background: dimgrey;
+            background: #FAFBFC;
+            border-top: none;
+            font-size: 12px;
         }
     }
 }
@@ -65,16 +68,22 @@ table {
 }
 
 .action-bar__content {
-    width: 100%;
+    display: flex;
+    width: calc(100% - 64px);
     height: 100%;
+    padding-inline: 32px;
     background: black;
     opacity: 0;
     transform: translateY(200%);
     transition: all 0.3s ease;
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
 }
 
 .selection-counter {

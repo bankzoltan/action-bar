@@ -1,4 +1,3 @@
-import 'reset-css/reset.css';
 import './App.css';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -57,19 +56,23 @@ function App() {
             <div className="container">
                 <div className={`action-bar ${isPinned ? 'pinned' : ''} ${selectedRows.length > 0 ? '' : 'invisible'}`} ref={stickyRef}>
                     <div className={`action-bar__content ${selectedRows.length > 0 ? 'show' : ''}`}>
-                        <span className="selection-counter">{selectedRows.length} selected</span>
-                        <button onClick={() => setSelectedRows([])}>Deselect All</button>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <div className="inner">
+                            <span className="selection-counter">{selectedRows.length} selected</span>
+                            <button onClick={() => setSelectedRows([])}>Deselect All</button>
+                        </div>
+                        <div className="inner">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
                     </div>
                 </div>
                 <table border="1" cellPadding="10" cellSpacing="0">
                     <thead>
                     <tr>
-                        <th>Select</th>
-                        <th>Country</th>
-                        <th>Name</th>
-                        <th>Company</th>
+                        <th></th>
+                        <th width="33%">Country</th>
+                        <th width="33%">Name</th>
+                        <th width="33%">Company</th>
                     </tr>
                     </thead>
                     <tbody>
